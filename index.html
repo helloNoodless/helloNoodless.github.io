@@ -152,6 +152,265 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-aria2离线下载谷歌团队盘简要过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="离线下载到谷歌网盘-精简版"><a href="#离线下载到谷歌网盘-精简版" class="headerlink" title="离线下载到谷歌网盘 精简版"></a>离线下载到谷歌网盘 精简版</h1><p>自己摸索中进行记录，看到网上很多帖子，有用宝塔面板和可道云进行搭建，但是过于繁琐<br>本文尝试记录自己的大概流程<br>本文基于<br><a target="_blank" rel="noopener" href="https://unvmax.com/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98%E6%90%AD%E5%BB%BA-%E6%97%A0%E9%99%90%E7%A9%BA%E9%97%B4%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD%E7%BD%91%E7%9B%98%E6%90%AD%E5%BB%BA.html">https://unvmax.com/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98%E6%90%AD%E5%BB%BA-%E6%97%A0%E9%99%90%E7%A9%BA%E9%97%B4%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD%E7%BD%91%E7%9B%98%E6%90%AD%E5%BB%BA.html</a><br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=_dUJsApeTYw">https://www.youtube.com/watch?v=_dUJsApeTYw</a><br>两位老师的综合，多有感谢两位老师</p>
+<h2 id="1-安装Rclone-2-安装aira2c-3-配置两个文件-（基于Debian9）"><a href="#1-安装Rclone-2-安装aira2c-3-配置两个文件-（基于Debian9）" class="headerlink" title="1.安装Rclone 2.安装aira2c 3.配置两个文件 （基于Debian9）"></a>1.安装Rclone 2.安装aira2c 3.配置两个文件 （基于Debian9）</h2><h3 id="安装rclone"><a href="#安装rclone" class="headerlink" title="安装rclone"></a>安装rclone</h3><p>curl <a target="_blank" rel="noopener" href="https://rclone.org/install.sh">https://rclone.org/install.sh</a> | sudo bash</p>
+<p>之后将谷歌网盘与rclone关联<br>输入 rclone config<br>选择谷歌网盘<br>两次回车<br>选择权限1 fuill<br>回车直到是否为<strong>自动配置</strong><br>选择n（默认是yes）<br>（选择n的原因是因为，我之前选择y 经常显示waiting for code 好几天没有解决 直到看到帖子受到启发 选择n）<br>之后打开链接将浏览器的一串密钥贴入<br>回车后问是否为团队盘<br>在此选择是（主要因为团队盘的空间大啊）<br>之后选择 this is ok 退出就行</p>
+<h3 id="安装aria2"><a href="#安装aria2" class="headerlink" title="安装aria2"></a>安装aria2</h3><p>wget -N git.io/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; ./aria2.sh</p>
+<h4 id="修改网盘名称和目录"><a href="#修改网盘名称和目录" class="headerlink" title="修改网盘名称和目录"></a>修改网盘名称和目录</h4><p>vim /root/.aria2c/script.conf<br>这个一般可以用<br> 网盘名称(RCLONE 配置时填写的 name)<br>drive-name=googleDrive<br> 网盘目录。注释或留空为网盘根目录，末尾不要有斜杠。<br>drive-dir=/下载（自动会在团队盘创建，因为本身使用团队盘）</p>
+<h4 id="修改下载后上传"><a href="#修改下载后上传" class="headerlink" title="修改下载后上传"></a>修改下载后上传</h4><p>wget -N git.io/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; ./aria2.sh<br>修改配置文件，手动修改<br>找到下载完成后 clean.sh改成 upload.sh（在几乎最后面）</p>
+<p>之后可以下载一个东西进行测试<br>测试链接<br><a target="_blank" rel="noopener" href="https://media.w3.org/2010/05/sintel/trailer.mp4">https://media.w3.org/2010/05/sintel/trailer.mp4</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/09/28/aria2%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD%E8%B0%B7%E6%AD%8C%E5%9B%A2%E9%98%9F%E7%9B%98%E7%AE%80%E8%A6%81%E8%BF%87%E7%A8%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-谷歌云aira2c离线" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: 谷歌云</p>
+<p><a target="_blank" rel="noopener" href="https://unvmax.com/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98%E6%90%AD%E5%BB%BA-%E6%97%A0%E9%99%90%E7%A9%BA%E9%97%B4%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD%E7%BD%91%E7%9B%98%E6%90%AD%E5%BB%BA.html">https://unvmax.com/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98%E6%90%AD%E5%BB%BA-%E6%97%A0%E9%99%90%E7%A9%BA%E9%97%B4%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD%E7%BD%91%E7%9B%98%E6%90%AD%E5%BB%BA.html</a></p>
+<p><strong>准备工作</strong></p>
+<p>1.需要有一台VPS，不需要太高的配置，但是网速要快；</p>
+<p>2.需要会一点Linux相关的知识；</p>
+<p>3.需要一个无限空间的Google Drive谷歌网盘账号；</p>
+<p>4.最好能正常访问外网，如果不能可以挂载微软5T的网盘；</p>
+<p>5.最好有个域名，这样更好，没有也行。</p>
+<p><strong>一、购买并登录VPS</strong></p>
+<p>参考教程：<a target="_blank" rel="noopener" href="https://www.unvone.com/66687.html"><strong>Bandwagon HOST搬瓦工VPS注册、购买和连接SSH登录教程</strong></a></p>
+<p><strong>二、安装BT宝塔面板</strong></p>
+<p><strong>这步的目的是为Linux安装一个可视化的面板，一键安装LAMP环境。</strong></p>
+<p>宝塔Linux面板是提升运维效率的服务器管理软件，支持一键LAMP/LNMP/集群/监控/网站/FTP/数据库/JAVA等100多项服务器管理功能，运维高效，入门简单，同时适合新手和老鸟。</p>
+<p><strong>1.运行安装命令 安装BT宝塔面板</strong></p>
+<p><strong>Centos安装命令：</strong></p>
+<p>yum install -y wget &amp;&amp; wget -O install.sh <a target="_blank" rel="noopener" href="http://download.bt.cn/install/install_6.0.sh">http://download.bt.cn/install/install_6.0.sh</a> &amp;&amp; sh install.sh</p>
+<p><strong>Centos/Ubuntu/Deepin安装命令：</strong></p>
+<p>curl -sSO <a target="_blank" rel="noopener" href="http://download.bt.cn/install/new_install.sh">http://download.bt.cn/install/new_install.sh</a> &amp;&amp; bash new_install.sh</p>
+<p><strong>其他安装命令可以访问宝塔官网：</strong><a target="_blank" rel="noopener" href="https://www.bt.cn/?invite_code=MV90YXdpc3o=">https://www.bt.cn/</a></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\539380d5eb1742a69959cdd258acc2d2\p01-1024x326.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\e061c5565cf44592bac4461efb870307\p02-1024x632.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\991b34cfc8c84366988d6ceeab3a1539\p03-1024x417.png" alt="img"></p>
+<p><strong>2.登录宝塔面板</strong></p>
+<p>在浏览器打开地址，输入账号密码登录面板。</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\9b8d74b1b5d24db988c024edc5c7b816\p04-1024x677.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\92e6712cd0e342b2b43a459e23572d9a\p05-1024x347.png" alt="img"></p>
+<p><strong>3.安装套件LNMP</strong></p>
+<p>根据弹出的提示安装点击【一键安装】完成LNMP的安装。</p>
+<p>LNMP L代表Linux，N代表Nginx，M代表MySQL，P代表PHP</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\a344c559cfe949b1bec66877bbfa59ef\bc0c3-wp06.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\7cda8c400a724e66b50eb29b0f640e63\p07-1024x688.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\93001c03a42b49c28e6d61ee69ca4460\p08-1024x549.png" alt="img"></p>
+<p><strong>三、安装可道云网盘</strong></p>
+<p><strong>这步的目的是安装一个网盘程序作为后面离线下载文件访问和谷歌云盘文件访问的可视化界面。</strong></p>
+<p><strong>1.安装【宝塔一键部署源码】插件</strong></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\e666b65eb34f4607a8c931a0b5cd3da5\p33-1024x479.png" alt="img"></p>
+<p><strong>2.通过 宝塔一键部署源码 插件安装可道云</strong></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\ad83265669b848898f0159af9f8052fc\p34-1024x378.png" alt="img"></p>
+<p>找到可道云 点击【一键部署】</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\185d2eb34d554a718fcc1ad9ab2ee1c1\p35-1024x517.png" alt="img"></p>
+<p>填入自己的域名或VPS的IP</p>
+<p>注意：如果填写域名要到域名购买商那里做好解析。</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\62d27ecae5b24d568c948b5b27311415\p36-1024x522.png" alt="img"></p>
+<p><strong>3.登录可道云网盘 进行初始化设置</strong></p>
+<p>等等部署完成后，点击进入自己搭建的可道云云盘进行初始化设置</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\b1e913cff8854844a35dc8e10868472c\p37-1024x500.png" alt="img"></p>
+<p>浏览器打开进行初始化设置：</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\084a9b0e42884a9ab982504aac8184af\p38-1024x750.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\5b98e1d94b86455692e8fbfdc4a176c8\p39-1024x608.png" alt="img"></p>
+<p><strong>4.可道云设置完成后如图</strong></p>
+<p>浏览器打开桌面如图：</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\0207abcfa7494b9496f8ef8d71818b3e\y01-1024x576.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\290e23be70204112bb1b43a37c491375\y02-1024x576.png" alt="img"></p>
+<p><strong>四、安装Aria2离线下载</strong></p>
+<p><strong>这步是安装一个支持多种下载方式的下载工具，并配置下载可视化面板</strong>。</p>
+<p><strong>1.Aria2离线下载安装</strong></p>
+<p>这里使用 <a target="_blank" rel="noopener" href="https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC9hcmlhMi5zaA==">Aria2 一键安装管理脚本 增强版</a>，执行下面的代码下载并运行脚本，出现脚本操作菜单输入 1 开始安装。</p>
+<p>wget -N git.io/aria2.sh &amp;&amp; chmod +x aria2.sh &amp;&amp; ./aria2.sh</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\6e2c32fe339a4b34b0acd7251d7a9139\2-01-1024x56.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\a1705d91319f489ca0f1d4ff60222aa5\1a718-a2-02.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\3715ef940233477b80ae439797b411b2\1f927-a2-03.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\4955f099c24f4b82bb3f31cd3eddbe9b\6d059-a2-04.png" alt="img"></p>
+<p>再配置一下</p>
+<p>./aria2.sh</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\1659d0615465439aab55de846765f02c\23ad7-a2-05.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\9329803dcf5b429b852e442a96bec27c-07-1024x801.png" alt="img"></p>
+<p><strong>2.Aria2离线下载可视化面板</strong></p>
+<p>谷歌浏览器安装Aria2 for Chrome插件，其他浏览器也可以。</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\d50d97066bc441bfa4a255b114695f9b-13-1024x297.png" alt="img"></p>
+<p>浏览器插件安装请参考：<a target="_blank" rel="noopener" href="https://www.unvone.com/69638.html">https://www.unvone.com/69638.html</a></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\e42396ac705448d69ab1b2394ee6e2c3-14-1024x470.png" alt="img"></p>
+<p>配置完成后会显示【Aria2状态已经连接】</p>
+<p>PS 如果连接失败，请在宝塔面板开启6800端口</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\b1b3ac95857d43609b2eb702bb6f4895-15-1024x147.png" alt="img"></p>
+<p><strong>五、安装Rclone挂载谷歌网盘</strong></p>
+<p><strong>这步的目的：VPS的硬盘显然是不够广大宅男使用，通过Rclone挂载谷歌无限空间的网盘，给VPS扩容。</strong></p>
+<p><strong>1.安装Rclone挂载工具</strong></p>
+<p>RCLONE 官方提供了<a target="_blank" rel="noopener" href="https://p3terx.com/go/aHR0cHM6Ly9yY2xvbmUub3JnL2luc3RhbGwvI3NjcmlwdC1pbnN0YWxsYXRpb24=">一键安装脚本</a>：</p>
+<p>curl <a target="_blank" rel="noopener" href="https://rclone.org/install.sh">https://rclone.org/install.sh</a> | sudo bash</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\85e90e803477447b8628b9861530dbc4-08-1024x124.png" alt="img"></p>
+<p><strong>2.挂载谷歌网盘</strong></p>
+<p>安装完后，输入 rclone config 命令进入交互式配置选项，按照提示一步一步来进行操作即可。如果你一脸懵逼，可以去看《<a target="_blank" rel="noopener" href="https://p3terx.com/archives/rclone-installation-and-configuration-tutorial.html">Rclone 安装配置教程</a>》来了解配置的详细过程。</p>
+<p>./rclone config</p>
+<p>选择 【n】(新建)，然后回车输入一个name(名字)，例如：这里我创建的名字为 【GoogleDrive】</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\b73513564c8c46d78d84144628148a76\e08-1024x306.png" alt="img"></p>
+<p>这里选择你需要配置的存储类型，我这里选择 13（Google Drive），根据版本变化选择的序号会不同看清楚Google Drive再选择，如果要挂载其他的选填数字即可：</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\eeb73f55702c4a1ebe5e5773e13ccc08\e09-1024x178.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\dccbd3bab1d1403cb61be686109a1216\e10-1024x334.png" alt="img"></p>
+<p>接下来会叫选填 Google Application Client ID 和，这里 2 项都留空回车即可：</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\13de0d07995044e58dd97328219d6b80\e11-1024x217.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\5059e96f2af044808ff14534bf45f698\e12-1024x192.png" alt="img"></p>
+<p>rclone 在请求从驱动器访问时应使用的范围，这里选 1 即可</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\8ee89151ba1a46f8b212acc42ae350a3\e13-1024x617.png" alt="img"></p>
+<p>选填文件夹 ID 和帐户凭据 JSON 文件路径，这里我都留空回车的</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\1b8fb01735084461bbd9b36603f64e1f\e14-1024x118.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\6de56cd7cdee4fd48f747c9a9a408c31\e15-1024x118.png" alt="img"></p>
+<p>问你是否要编辑高级配置，这里我选择 N</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\48b4088e529e402d8cdd56706ded9a0c\279-rclone16.png" alt="img"></p>
+<p>是否自动远程配置，这里选择 N，因为你在手动远程配置</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\29bbd417531b434cb95dfcdc50ba54e9\05e-rclone17.png" alt="img"></p>
+<p>接下来会给出<a target="_blank" rel="noopener" href="https://www.yunloc.com/tag/google-drive">Google Drive</a>的授权地址，把它复制到浏览器打开，按提示登陆，复制获取到的代码，然后返回 SSH 粘贴后回车</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\1597f5d50312424d81cedf874ab4596d\e18-1024x131.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\cd2b7100c8c74da89021dfc77461355d\737-rclone19.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\f184ed7a7dc54f51b1aa424f947fd694\fb7-rclone20.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\807eb36f71874e2ea64f726973cfa80e\2bf-rclone21.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\bcbb95e47dab47b4976fa9a8232c3395\d97-rclone22.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\3f8c69c057e4496d8ca49ba034052427\e23-1024x133.png" alt="img"></p>
+<p>问你是不是将其配置为团队网盘，这里选 n</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\fc7cdcbbc42445aaa97a85e97737592e\e24-1024x201.png" alt="img"></p>
+<p>列出你上面修改的配置信息，问你是否删除、编辑或者确定配置信息，这里选择确定 y</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\aa1830632936437db9a22f1bd1fd05b8\688-rclone25.png" alt="img"></p>
+<p>问你是否修改、删除、退出配置编辑，这里选择退出 q</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\c0cd24d4c06745d294f6fb7c4d1db686\e26-1024x524.png" alt="img"></p>
+<p><strong>3.挂载目录</strong></p>
+<p>到这里结束配置 rclone，下面要把 Google Drive 网盘挂载到云主机/Vps 上和设置开机自启，自动挂载 Google Drive 网盘。</p>
+<p><strong>在可道云网盘的home目录下创建一个Drive文件夹</strong></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\e6ef5ad2d40844899181684a7b977e82-09-1024x236.png" alt="img"></p>
+<p><strong>挂载的目录：</strong></p>
+<p>/www/wwwroot/cloud.unvmax.com/data/User/admin/home/Drive</p>
+<p>挂载命令：</p>
+<p>./rclone mount GoogleDrive:  /www/wwwroot/cloud.unvmax.com/data/User/admin/home/Drive –allow-other –allow-non-empty –vfs-cache-mode writes</p>
+<p>/www/wwwroot/cloud.unvmax.com/data/User/admin/home/Drive   #自己的可道云文件目录</p>
+<p><strong>注意，mount 后面有个空格 表示谷歌云的所有  另外debian 不需要./(这也是失败的经验)</strong></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\6952dfe42e9140cab9b6f4125f9cdf78\2-10-1024x96.png" alt="img"></p>
+<p>挂载只要几秒钟，但终端不会返回成功信息，关闭 SSH 重连即可。</p>
+<p><strong>4.查看是否挂载成功</strong></p>
+<p><strong>查看是否挂载成功</strong></p>
+<p>df -h</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\2d7842b0049f4520895a0f1002a46018\e28-1024x374.png" alt="img"></p>
+<p>挂载到可道云的效果：和谷歌网盘里面的文件一样。</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\145bed28de664d6096064f1855b98fb1-11-1024x180.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\471a300243074bab91fcde760ff173b1-12-1024x439.png" alt="img"></p>
+<p><strong>六、配置自动上传脚本</strong></p>
+<p><strong>1.配置自动上传脚本</strong></p>
+<p><strong>这步的目的是将离线下载的文件自动上传到谷歌网盘。</strong></p>
+<p><a target="_blank" rel="noopener" href="https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC9hcmlhMi5zaA==">Aria2 一键安装管理脚本 增强版</a> 整合了 <a target="_blank" rel="noopener" href="https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC9hcmlhMl9wZXJmZWN0X2NvbmZpZw==">Aria2 完美配置</a> ，安装后会附带一些附加功能脚本功能脚本，RCLONE 自动上传脚本就是其中之一。由于默认不启用，所以需要手动启用。</p>
+<p><strong>如何退出vim命令 按 I 表示编辑  按esc退出编辑 之后按：紧接着输入 wq 变到命令阶段</strong></p>
+<p>vim /root/.aria2c/script.conf</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\bed7bb059a2a45d78c285be86fccb48d-16-1024x121.png" alt="img"></p>
+<p>打开附加功能脚本配置文件进行修改，有中文注释，按照自己的实际情况进行修改，一般只需要修改下面2个部分。</p>
+<p># 网盘名称(RCLONE 配置时填写的 name) drive-name=googleDrive # 网盘目录。注释或留空为网盘根目录，末尾不要有斜杠。 drive-dir=/下载</p>
+<p>如图：</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\10f543d24e4f456ea0682cfc5640fd2b-17-1024x216.png" alt="img"></p>
+<p>打开 Aria2 配置文件进行修改。</p>
+<p>vim /root/.aria2c/aria2.conf</p>
+<p>找到“下载完成后执行的命令”，把clean.sh替换为upload.sh。</p>
+<p># 下载完成后执行的命令 on-download-complete=/root/.aria2c/upload.sh</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\8a9624ba95934294ab5e5173405acd74-18-1024x190.png" alt="img"></p>
+<p>重启 Aria2</p>
+<p>service aria2 restart</p>
+<p><strong>2.下载一个文件测试一下是否成功</strong></p>
+<p>测试链接  <a target="_blank" rel="noopener" href="https://media.w3.org/2010/05/sintel/trailer.mp4">https://media.w3.org/2010/05/sintel/trailer.mp4</a></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\0fbd6266f53147e7bceeb35a6f9292a4-19-1024x246.png" alt="img"></p>
+<p>查看是否能在可道云和谷歌网盘查看这个文件</p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\d586c3f5588541e0b62786d2a59e2811-20-1024x164.png" alt="img"></p>
+<p><img src="C:\Users\Administrator\AppData\Local\YNote\data\k88067647pingy@163.com\391025479d1344c091bfff066f79c76b-21-1024x330.png" alt="img"></p>
+<p><strong>到这里一个支持离线下载和无限空间的网盘就搭建完成了！</strong></p>
+<p>赞 1</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/09/27/%E8%B0%B7%E6%AD%8C%E4%BA%91aira2c%E7%A6%BB%E7%BA%BF/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-my-first-artical" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
